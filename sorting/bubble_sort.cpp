@@ -11,21 +11,19 @@ void printArr(int arr[],int size){
 void sort(int arr[],int size){
 
     for(int i=0;i<size-1;i++){
-        int minIndex = i;
-        for(int j=i+1;j<size;j++){
-            if(arr[j] < arr[minIndex]){
-                minIndex = j;
+        for (int j = 0; j < size-i; j++)
+        {
+            if(arr[j] > arr[j+1]){
+                swap(arr[j],arr[j+1]);
             }
-            swap(arr[i],arr[minIndex]);
         }
-
+        
     }
 }
 
 int main(){
 
-    
-    int arr[5] = {2,3,4,5,1};
+    int arr[5] = {2,3,2,5,1};
     sort(arr,5);
     printArr(arr,5);
 
